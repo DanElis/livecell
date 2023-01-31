@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  livecell_backend:
+    build:
+      context: ./backend/
+      dockerfile: ./Dockerfile
+      args:
+        buildno: 1
+    ports:
+      - 8001:8001
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [ gpu ]
+    environment:
+      - HOST=0.0.0.0
+      - PORT=8001
