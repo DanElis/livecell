@@ -12,7 +12,10 @@
 
 ## Deploy
 The solution is wrapped in a docker image
-To run it on localhost:8001 you need to run the following commands
+To run it on localhost:8001 you need to run the following commands. To change the model, you need to replace best.pt with your solution
 
 1) docker compose build --force-rm --no-cache livecell_backend
 2) docker compose up -d
+
+## Checkpoint 
+The cell-30 folder contains the training results of the yolov8n-seg model
